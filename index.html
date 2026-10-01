@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">GET THINGS DONE</p>
+        <h1>Task Manager</h1>
+        <p class="subtitle">A little progress each day adds up.</p>
+      </div>
+      <div class="date" id="today"></div>
+    </header>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>All tasks</span>
+        <strong id="allCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>To do</span>
+        <strong id="todoCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Completed</span>
+        <strong id="doneCount">0</strong>
+      </article>
+    </section>
+
+    <section class="layout">
+      <section class="panel task-panel">
+        <div class="panel-heading">
+          <h2>My tasks</h2>
+          <select id="filter" aria-label="Filter tasks">
+            <option value="all">All tasks</option>
+            <option value="active">To do</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <div id="taskList"></div>
+      </section>
+
+      <form class="panel form-panel" id="taskForm">
+        <h2>Add a task</h2>
+
+        <label for="taskTitle">Task name</label>
+        <input id="taskTitle" type="text" maxlength="80"
+          placeholder="e.g. Finish project" required>
+
+        <label for="taskCategory">Category</label>
+        <select id="taskCategory">
+          <option>Personal</option>
+          <option>Work</option>
+          <option>Study</option>
+          <option>Health</option>
+          <option>Other</option>
+        </select>
+
+        <label for="taskPriority">Priority</label>
+        <select id="taskPriority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <label for="taskDate">Due date (optional)</label>
+        <input id="taskDate" type="date">
+
+        <button type="submit">Add task</button>
+      </form>
+    </section>
+
+    <p class="footer">Your tasks are saved in this browser.</p>
+  </main>
+</body>
+</html>
